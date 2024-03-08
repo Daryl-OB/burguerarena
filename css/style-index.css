@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+:root{
+    --tipografia: 'Kanit', sans-serif;
+    --rojo: #ed3035;
+    --negro: #373435;
+    --blanco: #fff;
+    --tipografia-titulos: 'Secular One', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    position: relative;
+}
+
+
+
+/*HEADER*/
+#header{
+    top: 0;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 50px;
+    background: var(--negro);
+    z-index: 999;
+}
+#xmark, #burger{
+    display: none;
+    color: var(--blanco);
+    font-size: 25px;
+    cursor: pointer;
+}
+nav{
+    display: flex;
+    gap: 23px;
+    align-items: center;
+}
+nav a{
+    text-decoration: none;
+    color: var(--blanco);
+    font-family: var(--tipografia);
+    font-size: 18px;
+    transition: all .3s ease-in;
+}
+nav a:hover{
+    color: var(--rojo);
+}
+nav a:last-child{
+    padding: 8px 13px;
+    background: var(--rojo);
+    border-radius: 20px;
+    transition: all .3s ease-in;
+}
+nav a:last-child{
+    padding: 8px 13px;
+    background: var(--rojo);
+    border-radius: 20px;
+}
+nav a:last-child:hover{
+    background: var(--blanco);
+    color: var(--negro);
+}
+
+/*MAIN*/
+#main{
+    height: calc(100vh);
+    background: url("../img/background-main.jpg") no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#main h1{
+    font-family: var(--tipografia-titulos);
+    font-size: 5.5rem;
+    color: var(--blanco);
+    font-weight: bold;
+    transform: rotate(-3deg);
+    margin: 0;
+    text-align: center;
+    transition: all 0.5s ease-in;
+}
+
+/*IMG-NOSOTROS*/
+#img-nosotros{
+    height: 300px;
+    background: url("../img/nosotros.jpg") center/cover no-repeat;
+}
+.info{
+    font-family: var(--tipografia);
+    letter-spacing: 1px;
+}
+.info h1{
+    color: var(--rojo);
+}
+
+#img-carta{
+    background: url("../img/burger-carta.jpg") no-repeat center/cover;
+    height: 300px;
+}
+
+/*BOTON DE WHATSAPP*/
+.btn-whatsapp{
+    position: fixed;
+    bottom: 20px;
+    right: 50px;
+    padding: 6px 16px;
+    background-color: #25D366;
+    font-size: 30px;
+    border-radius: 50%;
+    color: var(--blanco);
+}
+.enlaces-footer{
+    font-family: var(--tipografia);
+}
+
+/*MEDIAS QUERYS*/
+@media (max-width:769px){
+    nav{
+        z-index: 1000;
+        position: fixed;
+        flex-direction: column;
+        left: 100%;
+        top: 0;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background: var(--negro);
+        gap: 50px;
+        transition: all .3s ease-out;
+    }
+    #xmark, #burger{
+        display: block;
+    }
+    #xmark{
+        position: absolute;
+        top: 30px;
+        right: 50px;
+    }
+}
+@media (max-width:620px){
+    #main h1{
+        font-size: 3.5em;
+    }
+}
+@media (max-width:620px){
+    #header{
+        padding: 5px 20px;
+    }
+    #xmark{
+        position: absolute;
+        top: 30px;
+        right: 20px;
+    }
+    .btn-whatsapp{
+        right: 20px;
+    }
+}
+@media (max-width:375px){
+    #main h1{
+        font-size: 2.8em;
+    }
+}
+
+/*CLASES EXTRAS*/
+.open{
+    left: 0;
+}
+.close{
+    left: 100%;
+}
+.no-scroll{
+    overflow: hidden;
+}
